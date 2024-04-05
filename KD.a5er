@@ -1,0 +1,297 @@
+# A5:ER FORMAT:15
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright © 2007 m.matsubara
+# A5:SQL Mk-2 Version 2.16.2 Copyright © 1997 - 2021 m.matsubara
+#  https://a5m2.mmatsubara.com
+
+[Manager]
+ProjectName=KD
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=6
+RDBMSTypeName=PostgreSQL
+CommonField="created_by","created_by","@INT","NOT NULL",,"","",$FFFFFFFF
+CommonField="created_at","created_at","@DATETIME","NOT NULL",,"","",$FFFFFFFF
+CommonField="created_pg","created_pg","@VARCHAR(100)","NOT NULL",,"","",$FFFFFFFF
+CommonField="updated_by","updated_by","@INT",,,"","",$FFFFFFFF
+CommonField="updated_at","updated_at","@DATETIME",,,"","",$FFFFFFFF
+CommonField="updated_pg","updated_pg","@VARCHAR(100)",,,"","",$FFFFFFFF
+CommonField="is_delete","is_delete","@INT","NOT NULL",,"0","",$FFFFFFFF
+CommonField="deleted_by","deleted_by","@INT",,,"","",$FFFFFFFF
+CommonField="deleted_at","deleted_at","@DATETIME",,,"","",$FFFFFFFF
+CommonField="deleted_pg","deleted_pg","@VARCHAR(100)",,,"","",$FFFFFFFF
+CommonField="version","version","@INT","NOT NULL",,"0","",$FFFFFFFF
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+UpperCaseKeyword=0
+ShowTag=1
+ShowCommonAttributes=0
+
+[Entity]
+PName=m_member
+LName=会員
+Comment=
+TableOption=
+Page=MAIN
+Left=200
+Top=150
+Field="ID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="姓","last_name","@VARCHAR(100)","NOT NULL",,"","",$FFFFFFFF,""
+Field="名","first_name","@VARCHAR(100)","NOT NULL",,"","",$FFFFFFFF,""
+Field="所属クラブID","cureent_club_id","@INT",,,"","",$FFFFFFFF,""
+Field="性別","gender","@INT","NOT NULL",,"","1:男,2:女,3:その他",$FFFFFFFF,""
+Field="生年月日","birthday","@DATE",,,"","",$FFFFFFFF,""
+Field="メールアドレス","mail_address","@VARCHAR(200)",,,"","",$FFFFFFFF,""
+Field="電話番号１","tel1","@VARCHAR(16)",,,"","",$FFFFFFFF,""
+Field="電話番号２","tel2","@VARCHAR(16)",,,"","",$FFFFFFFF,""
+Field="郵便番号","zip_code","@VARCHAR(8)",,,"","",$FFFFFFFF,""
+Field="住所１","address1","@VARCHAR(200)",,,"","",$FFFFFFFF,""
+Field="住所２","address2","@VARCHAR(200)",,,"","",$FFFFFFFF,""
+Field="入会日","join_date","@DATE",,,"","",$FFFFFFFF,""
+Field="１スター","one_star","bit",,,"","",$FFFFFFFF,""
+Field="１スター取得日","one_star_date","@DATE",,,"","",$FFFFFFFF,""
+Field="１スター認定者","one_star_certified_member_id","@INT",,,"","",$FFFFFFFF,""
+Field="２スター","two_star","bit",,,"","",$FFFFFFFF,""
+Field="２スター取得日","two_star_date","@DATE",,,"","",$FFFFFFFF,""
+Field="２スター認定者","two_star_certified_member_id","@INT",,,"","",$FFFFFFFF,""
+Field="３スター","three_star","bit",,,"","",$FFFFFFFF,""
+Field="３スター取得日","three_star_date","@DATE",,,"","",$FFFFFFFF,""
+Field="３スター認定者","three_star_certified_member_id","@INT",,,"","",$FFFFFFFF,""
+Field="４スター","four_star","bit",,,"","",$FFFFFFFF,""
+Field="４スター取得日","four_star_date","@DATE",,,"","",$FFFFFFFF,""
+Field="４スター認定者","four_star_certified_member_id","@INT",,,"","",$FFFFFFFF,""
+Field="１スターインストラクター","１スターインストラクター","bit",,,"","",$FFFFFFFF,""
+Field="１スターインストラクター取得日","１スターインストラクター取得日","@DATE",,,"","",$FFFFFFFF,""
+Field="１スターインストラクター認定者","１スターインストラクター認定者","@INT",,,"","",$FFFFFFFF,""
+Field="２スターインストラクター","２スターインストラクター","bit",,,"","",$FFFFFFFF,""
+Field="２スターインストラクター認定者","２スターインストラクター認定者","@DATE",,,"","",$FFFFFFFF,""
+Field="３スターインストラクター","３スターインストラクター","bit",,,"","",$FFFFFFFF,""
+Field="３スターインストラクター取得日","３スターインストラクター取得日","@INT",,,"","",$FFFFFFFF,""
+Field="３スターインストラクター認定者","３スターインストラクター認定者","@DATE",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240405122520
+Position="MAIN",200,150
+ZOrder=1
+
+[Entity]
+PName=m_branch
+LName=支部
+Comment=
+TableOption=
+Page=MAIN
+Left=600
+Top=150
+Field="ID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="名称","name","@VARCHAR(100)","NOT NULL",,"","",$FFFFFFFF,""
+Field="支部長ID","leader_member_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240405121443
+Position="MAIN",600,150
+ZOrder=2
+
+[Entity]
+PName=m_club
+LName=クラブ
+Comment=
+TableOption=
+Page=MAIN
+Left=850
+Top=150
+Field="ID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="名称","name","@VARCHAR(100)","NOT NULL",,"","",$FFFFFFFF,""
+Field="支部ID","branch_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="代表ID","leader_member_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="メールアドレス","mail_address","@VARCHAR(200)",,,"","",$FFFFFFFF,""
+Field="電話","tel","@VARCHAR(16)",,,"","",$FFFFFFFF,""
+Field="FAX","fax","@VARCHAR(16)",,,"","",$FFFFFFFF,""
+Field="住所１","address1","@VARCHAR(200)",,,"","",$FFFFFFFF,""
+Field="住所２","address2","@VARCHAR(200)",,,"","",$FFFFFFFF,""
+Field="発足日","start_date","@DATE",,,"","",$FFFFFFFF,""
+Field="閉鎖日","close_date","@DATE",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240405121450
+Position="MAIN",850,150
+ZOrder=3
+
+[Entity]
+PName=m_product
+LName=商品マスタ
+Comment=
+TableOption=
+Page=MAIN
+Left=1250
+Top=200
+Field="ID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="商品名","name","@VARCHAR(100)","NOT NULL",,"","",$FFFFFFFF,""
+Field="単価","price","@DECIMAL(10,2)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240405121457
+Position="MAIN",1250,200
+ZOrder=4
+
+[Entity]
+PName=m_certificate
+LName=資格マスタ
+Comment=
+TableOption=
+Page=MAIN
+Left=1550
+Top=200
+Field="ID","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="名称","name","@VARCHAR(100)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240405121507
+Position="MAIN",1550,200
+ZOrder=5
+
+[Entity]
+PName=t_h_slip
+LName=伝票ヘッダ
+Comment=
+TableOption=
+Page=MAIN
+Left=900
+Top=550
+Field="id","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="購入者ID","buyer_member_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="合計金額(税抜)","total_amount","@DECIMAL","NOT NULL",,"","",$FFFFFFFF,""
+Field="税額","tax_fee","@DECIMAL",,,"","",$FFFFFFFF,""
+Field="適用税率","tax_percent","@DECIMAL",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240405121554
+Position="MAIN",900,550
+ZOrder=6
+
+[Entity]
+PName=t_d_slip
+LName=伝票明細
+Comment=
+TableOption=
+Page=MAIN
+Left=1200
+Top=550
+Field="id","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="伝票ID","slip_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="商品ID","product_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="単価","unit_price","@DECIMAL","NOT NULL",,"","",$FFFFFFFF,""
+Field="数量","tax_percent","@DECIMAL","NOT NULL",,"","",$FFFFFFFF,""
+Field="小計","amount","@DECIMAL","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240405122304
+Position="MAIN",1200,550
+ZOrder=7
+
+[Entity]
+PName=t_payment
+LName=入金データ
+Comment=
+TableOption=
+Page=MAIN
+Left=950
+Top=800
+Field="id","id","","NOT NULL",0,"","",$FFFFFFFF,""
+Field="入金方法","payment_type","","NOT NULL",,"","1:振込,2:現金",$FFFFFFFF,""
+Field="振込依頼人名","furikomi_name","",,,"","",$FFFFFFFF,""
+Field="振込会員ID","member_id","",,,"","",$FFFFFFFF,""
+Field="入金日","入金日","","NOT NULL",,"","",$FFFFFFFF,""
+Field="入金額","入金額","","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240405122249
+Position="MAIN",950,800
+ZOrder=8
+
+[Entity]
+PName=t_h_deposit_application
+LName=消込ヘッダ
+Comment=
+TableOption=
+Page=MAIN
+Left=1350
+Top=850
+Field="id","id","","NOT NULL",0,"","",$FFFFFFFF,""
+Field="消込日","消込日","","NOT NULL",,"","",$FFFFFFFF,""
+Field="差額調整区分","差額調整区分","",,,"","",$FFFFFFFF,""
+Field="差額調整額","差額調整額","",,,"","",$FFFFFFFF,""
+Field="消込対象額","消込対象額","","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240405121913
+Position="MAIN",1350,850
+ZOrder=9
+
+[Entity]
+PName=t_d_deposit_application_slip
+LName=消込明細_伝票
+Comment=
+TableOption=
+Page=MAIN
+Left=1600
+Top=850
+Field="id","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="消込ヘッダID","deposit_application_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="ソート順","sort_no","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="伝票明細ID","slip_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240405122121
+Position="MAIN",1600,850
+ZOrder=10
+
+[Entity]
+PName=t_d_deposit_application_payment
+LName=消込明細_入金
+Comment=
+TableOption=
+Page=MAIN
+Left=1800
+Top=850
+Field="id","id","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="消込ヘッダID","deposit_application_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="ソート順","order_no","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="入金データID","payment_id","@INT","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240405122133
+Position="MAIN",1800,850
+ZOrder=11
